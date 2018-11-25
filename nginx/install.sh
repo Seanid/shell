@@ -41,5 +41,16 @@ make
 #安装：
 sudo make install
 
+if [ $? -eq 0 ];then 
+    echo "安装完成"
+else
+    echo "安装异常"
+fi
 
-echo "安装完成"
+echo “为nginx 指定用户组”
+
+chown root.www /usr/local/nginx/sbin/nginx
+chmod 750 /usr/local/nginx/sbin/nginx
+chmod u+s /usr/local/nginx/sbin/nginx
+
+
